@@ -1,5 +1,8 @@
 package com.example.shoppingapp.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,10 +17,13 @@ public class CartItem {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("product")
     private Product product;
 
     @ManyToOne
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("cart")
+    @JsonBackReference
     private Cart cart;
 
     public CartItem() {

@@ -22,6 +22,13 @@ public class CartService {
     @Autowired
     ProductRepository productRepository;
 
+
+    public List<CartItem> getAllItemUserCart(long id) {
+        Optional<User> queryUser = userRepository.findById(id);
+        return queryUser.get().getCart().getCartItemList();
+    }
+
+
     public AppResponse addItemToUserCart(Long userId, Long productId, Integer quantity) {
         Optional<User> userResult = userRepository.findById(userId);
         Optional<Product> productResult = productRepository.findById(productId);

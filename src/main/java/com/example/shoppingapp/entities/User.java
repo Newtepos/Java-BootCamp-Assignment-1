@@ -23,7 +23,7 @@ public class User {
     private PaymentAddress paymentAddress;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
-    @JsonIgnoreProperties
+    @JsonIgnoreProperties("user")
     private Cart cart;
 
     public User() {
