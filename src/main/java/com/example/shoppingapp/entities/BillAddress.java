@@ -1,5 +1,7 @@
 package com.example.shoppingapp.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class BillAddress {
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonIgnoreProperties("user")
     User user;
 
     public BillAddress() {

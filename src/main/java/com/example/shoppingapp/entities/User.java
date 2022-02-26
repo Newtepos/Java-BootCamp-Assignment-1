@@ -1,5 +1,7 @@
 package com.example.shoppingapp.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class User {
     public String password;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonIgnoreProperties("user")
     public BillAddress billAddress;
 
     public User() {
