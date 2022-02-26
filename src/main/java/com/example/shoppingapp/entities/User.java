@@ -1,9 +1,6 @@
 package com.example.shoppingapp.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -15,6 +12,8 @@ public class User {
     public String username;
     public String password;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    public BillAddress billAddress;
 
     public User() {
     }
@@ -42,5 +41,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public BillAddress getBillAddress() {
+        return billAddress;
+    }
+
+    public void setBillAddress(BillAddress billAddress) {
+        this.billAddress = billAddress;
     }
 }

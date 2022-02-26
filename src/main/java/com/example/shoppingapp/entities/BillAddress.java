@@ -1,9 +1,6 @@
 package com.example.shoppingapp.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class BillAddress {
@@ -16,13 +13,18 @@ public class BillAddress {
     public String district;
     private int zipCode;
 
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    User user;
+
     public BillAddress() {
     }
 
-    public BillAddress(String province, String district, int zipCode) {
+    public BillAddress(String province, String district, int zipCode, User user) {
         this.province = province;
         this.district = district;
         this.zipCode = zipCode;
+        this.user = user;
     }
 
     public long getId() {
@@ -51,5 +53,13 @@ public class BillAddress {
 
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
