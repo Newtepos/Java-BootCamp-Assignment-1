@@ -1,5 +1,6 @@
 package com.example.shoppingapp;
 
+import com.example.shoppingapp.entities.Cart;
 import com.example.shoppingapp.entities.Product;
 import com.example.shoppingapp.entities.User;
 import com.example.shoppingapp.product.ProductService;

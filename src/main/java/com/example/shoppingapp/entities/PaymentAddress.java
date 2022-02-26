@@ -22,6 +22,10 @@ public class PaymentAddress {
     public PaymentAddress() {
     }
 
+    public PaymentAddress(User user) {
+        this.user = user;
+    }
+
     public PaymentAddress(String cardHolder, long cardNumber, User user) {
         this.cardHolder = cardHolder;
         this.cardNumber = cardNumber;

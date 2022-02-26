@@ -27,6 +27,7 @@ public class CartItem {
         this.quantity = quantity;
         this.product = product;
         this.cart = cart;
+        this.totalPrice = product.getPrice() * quantity;
     }
 
     public long getId() {
@@ -63,5 +64,10 @@ public class CartItem {
 
     public void setCart(Cart cart) {
         this.cart = cart;
+    }
+
+    public void increaseQuantity(int addQuantity) {
+        this.quantity = quantity + addQuantity;
+        this.totalPrice = product.getPrice() * quantity;
     }
 }

@@ -23,6 +23,10 @@ public class BillAddress {
     public BillAddress() {
     }
 
+    public BillAddress(User user) {
+        this.user = user;
+    }
+
     public BillAddress(String province, String district, int zipCode, User user) {
         this.province = province;
         this.district = district;

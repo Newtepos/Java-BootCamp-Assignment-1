@@ -29,6 +29,7 @@ public class Cart {
 
     public Cart(User user) {
         this.user = user;
+        this.totalPrice = getTotalPrice();
     }
 
     public long getId() {
@@ -36,7 +37,15 @@ public class Cart {
     }
 
     public double getTotalPrice() {
-        return totalPrice;
+        double sum = 0.0;
+        if(cartItemList.isEmpty()) {
+            this.totalPrice = sum;
+        } else {
+            for(CartItem cartItem: cartItemList) {
+                sum = sum + cartItem.getTotalPrice();
+            }
+        }
+        return sum;
     }
 
     public void setTotalPrice(double totalPrice) {
@@ -58,4 +67,13 @@ public class Cart {
     public void setCartItemList(List<CartItem> cartItemList) {
         this.cartItemList = cartItemList;
     }
+
+    public void addItemList(CartItem cartItem) {
+        cartItemList.add(cartItem);
+    }
+
+    public boolean checkProductContain(Long id) {
+        return cartItemList.stream().anyMatch(n -> n.getProduct().getId() == id);
+    }
+
 }
