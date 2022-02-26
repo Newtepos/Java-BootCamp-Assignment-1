@@ -22,6 +22,10 @@ public class User {
     @JsonIgnoreProperties("user")
     private PaymentAddress paymentAddress;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonIgnoreProperties
+    private Cart cart;
+
     public User() {
     }
 
@@ -64,5 +68,13 @@ public class User {
 
     public void setPaymentAddress(PaymentAddress paymentAddress) {
         this.paymentAddress = paymentAddress;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
