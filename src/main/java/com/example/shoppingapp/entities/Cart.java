@@ -9,12 +9,12 @@ public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    private long id;
 
-    public double totalPrice;
+    private double totalPrice;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnoreProperties("user")
-    public User user;
+    private User user;
 }

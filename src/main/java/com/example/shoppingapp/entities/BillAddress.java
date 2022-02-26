@@ -9,16 +9,16 @@ public class BillAddress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    private long id;
 
-    public String province;
-    public String district;
+    private String province;
+    private String district;
     private int zipCode;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnoreProperties("user")
-    User user;
+    private User user;
 
     public BillAddress() {
     }

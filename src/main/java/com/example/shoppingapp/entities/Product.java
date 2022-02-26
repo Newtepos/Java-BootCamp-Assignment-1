@@ -10,12 +10,12 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    private long id;
 
-    public String productName;
-    public double price;
+    private String productName;
+    private double price;
 
-    public Product() {
+    private Product() {
     }
 
     public Product(String productName, double price) {

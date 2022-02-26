@@ -9,15 +9,15 @@ public class PaymentAddress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    private long id;
 
-    public String cardHolder;
-    public long cardNumber;
+    private String cardHolder;
+    private long cardNumber;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnoreProperties("user")
-    public User user;
+    private User user;
 
     public PaymentAddress() {
     }

@@ -9,18 +9,18 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    private long id;
 
-    public String username;
-    public String password;
-
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
-    @JsonIgnoreProperties("user")
-    public BillAddress billAddress;
+    private String username;
+    private String password;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     @JsonIgnoreProperties("user")
-    public PaymentAddress paymentAddress;
+    private BillAddress billAddress;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @JsonIgnoreProperties("user")
+    private PaymentAddress paymentAddress;
 
     public User() {
     }
