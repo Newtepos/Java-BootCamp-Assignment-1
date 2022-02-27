@@ -29,8 +29,8 @@ public class ShoppingappApplication {
 		//Create User
 		User user = new User("johndoe", "1234");
 		Cart cart = new Cart(user);
-		BillAddress billAddress = new BillAddress(user);
-		PaymentAddress paymentAddress = new PaymentAddress(user);
+		BillAddress billAddress = new BillAddress("Bangkok","Klongsam-parvet",10520,user);
+		PaymentAddress paymentAddress = new PaymentAddress("Supakit",1231233,user);
 		user.setCart(cart);
 		user.setBillAddress(billAddress);
 		user.setPaymentAddress(paymentAddress);

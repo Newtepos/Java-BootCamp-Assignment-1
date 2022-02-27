@@ -1,12 +1,10 @@
 package com.example.shoppingapp.cart;
 
 import com.example.shoppingapp.AppResponse;
-import com.example.shoppingapp.entities.Cart;
-import com.example.shoppingapp.entities.CartItem;
-import com.example.shoppingapp.entities.Product;
-import com.example.shoppingapp.entities.User;
+import com.example.shoppingapp.entities.*;
 import com.example.shoppingapp.repository.ProductRepository;
 import com.example.shoppingapp.repository.UserRepository;
+import com.example.shoppingapp.user.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +19,9 @@ public class CartService {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    CartGateway cartGateway;
 
 
     public List<CartItem> getAllItemUserCart(long id) {
@@ -67,5 +68,18 @@ public class CartService {
         } else {
             return new AppResponse("ProductID or UserID Incorrect!!");
         }
+    }
+
+    public CheckOutResponse userCartCheckout(long id) {
+        User queryUser = userRepository.findById(id).get();
+        UserResponse bankResponse = cartGateway.userCartCheckOut();
+        if(bankResponse.getMessage().equals("Bank Pay Completed")) {
+            String username = queryUser.getUsername();
+            BillAddress billAddress = queryUser.getBillAddress();
+            PaymentAddress paymentAddress = queryUser.getPaymentAddress();
+            List<CartItem> cartItemList = queryUser.getCart().getCartItemList();
+            return new CheckOutResponse(username,billAddress,paymentAddress,cartItemList);
+        }
+        return new CheckOutResponse();
     }
 }
