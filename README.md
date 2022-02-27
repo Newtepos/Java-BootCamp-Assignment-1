@@ -1,2 +1,5 @@
 # Java-BootCamp-Assignment-1
-[Link Text](https://github.com/Newtepos/Java-BootCamp-Assignment-1.wiki.git)
+
+
+## Main Flow Process
+[![](https://mermaid.ink/img/pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)
