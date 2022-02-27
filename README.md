@@ -1,6 +1,29 @@
 # Java-BootCamp-Assignment-1
+## InitialSetup
+### Stubby4j for ExternalApi Mockup
+- [Download](www.google.com) Stubby4j 
+- Run command java -jar stubby4j-x.x.x.jar -d BankApi.yaml (following your stubbh4j version)
+- Finish ExternalApi Setup
+
+## API List
 
 
+Body
+```JSON
+{
+ "name": "Martin",
+ "bornOn": "1957-01-05",
+ "bornIn": "http://www.scotland.org#"
+}
+```
+Response
+```JSON
+{
+ "name": "Martin",
+ "bornOn": "1957-01-05",
+ "bornIn": "http://www.scotland.org#"
+}
+```  
 ## Main Flow Process
 [![](https://mermaid.ink/img/pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)
 
@@ -15,5 +38,5 @@
 [![](https://mermaid.ink/img/pako:eNptkstOAjEUhl-l6cYhysItC41MARElBnRhqItje2QaZtpJLyaE4d3tdGSCxl1z_u8_1x6oMBLpiG4t1AV5YVzfZfmADIc3ZJw9WyOD8OQZtjjgepzCjUOwoiD1j_ixJ3PW5D3MwMMHuNaQd4aTskJXG-2wYRlTri5hT3oTOmFV7ZXR0ceSb5LdSdkT3pAcrCd5qcQOZaQmXfYlfKkteGym2atDe-ESF_Vp0mcp2nnPWpsl8f5QgCMOKuzHUZqIlr09cn3fVXhD18x_NXNJrge9vDRNkQmLsYfzLKEtK7pWin4RAp0jzGhsHrie_xfOVjgUUIpQtgnXoarAtotSou37IVkWm9MCf-lt2XbQd64XiXvc5AWKnQnxTMF7E2fr1heJxz_re9qsC1XXSm_TvSPxlIhlxgb0ilZoK1AyfpUD14Rw6guskNNRfEqwO065PkYu1DJmm0jljaWjTygdXlEI3qz3WtCRtwFPEFMQv13VBY_fxvLZyg)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNptkstOAjEUhl-l6cYhysItC41MARElBnRhqItje2QaZtpJLyaE4d3tdGSCxl1z_u8_1x6oMBLpiG4t1AV5YVzfZfmADIc3ZJw9WyOD8OQZtjjgepzCjUOwoiD1j_ixJ3PW5D3MwMMHuNaQd4aTskJXG-2wYRlTri5hT3oTOmFV7ZXR0ceSb5LdSdkT3pAcrCd5qcQOZaQmXfYlfKkteGym2atDe-ESF_Vp0mcp2nnPWpsl8f5QgCMOKuzHUZqIlr09cn3fVXhD18x_NXNJrge9vDRNkQmLsYfzLKEtK7pWin4RAp0jzGhsHrie_xfOVjgUUIpQtgnXoarAtotSou37IVkWm9MCf-lt2XbQd64XiXvc5AWKnQnxTMF7E2fr1heJxz_re9qsC1XXSm_TvSPxlIhlxgb0ilZoK1AyfpUD14Rw6guskNNRfEqwO065PkYu1DJmm0jljaWjTygdXlEI3qz3WtCRtwFPEFMQv13VBY_fxvLZyg)
 
 
-##Send request to ExternalApi(Bank)
+## Send request to ExternalApi(Bank)
 [![](https://mermaid.ink/img/pako:eNpFkUtvgzAQhP_KyofKkRL1zqES4IT21KiPG5ct3oIVMK69SEUh_70OD9Una-eb2ZF9FVWvSSSi9uga-FClhXhSqXZwODxBJnP0DGesabdI2TyfAqGvGgiNcc7YGh7A4diRZUCtPYUw5fIzkAeFjF8YNnu-2GtiiJTrbaBJSWWCa3GEF6YOHiEzbXsPTZeoODkv4WuI2jpYHVN-Bgo8nWSG9gLHXyZvsYXUmZU-LXTsB2Goqnu3QhZk0SMTvHodW76tXVZL8d-yn3VNjKadnuXR6plZuNKKvejId2h0fMTrrAhuqKNSJPGq0V9KUdpb5Aan48KjNtx7kXxjG2gvcOD-fbSVSNgPtEHKYPyQbqVuf1qtiLk)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNpFkUtvgzAQhP_KyofKkRL1zqES4IT21KiPG5ct3oIVMK69SEUh_70OD9Una-eb2ZF9FVWvSSSi9uga-FClhXhSqXZwODxBJnP0DGesabdI2TyfAqGvGgiNcc7YGh7A4diRZUCtPYUw5fIzkAeFjF8YNnu-2GtiiJTrbaBJSWWCa3GEF6YOHiEzbXsPTZeoODkv4WuI2jpYHVN-Bgo8nWSG9gLHXyZvsYXUmZU-LXTsB2Goqnu3QhZk0SMTvHodW76tXVZL8d-yn3VNjKadnuXR6plZuNKKvejId2h0fMTrrAhuqKNSJPGq0V9KUdpb5Aan48KjNtx7kXxjG2gvcOD-fbSVSNgPtEHKYPyQbqVuf1qtiLk)
