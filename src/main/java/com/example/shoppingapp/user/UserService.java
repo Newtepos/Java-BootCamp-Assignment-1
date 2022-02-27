@@ -1,12 +1,8 @@
 package com.example.shoppingapp.user;
 
-import com.example.shoppingapp.entities.BillAddress;
-import com.example.shoppingapp.entities.Cart;
-import com.example.shoppingapp.entities.PaymentAddress;
 import com.example.shoppingapp.entities.User;
 import com.example.shoppingapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,14 +13,8 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void createUser(User user) {
-        Cart cart = new Cart(user);
-        BillAddress billAddress = new BillAddress(user);
-        PaymentAddress paymentAddress = new PaymentAddress(user);
-        user.setCart(cart);
-        user.setBillAddress(billAddress);
-        user.setPaymentAddress(paymentAddress);
-        userRepository.save(user);
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public String login(User user) {

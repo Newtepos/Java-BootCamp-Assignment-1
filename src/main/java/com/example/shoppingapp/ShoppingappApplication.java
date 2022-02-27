@@ -1,9 +1,9 @@
 package com.example.shoppingapp;
 
-import com.example.shoppingapp.entities.Cart;
-import com.example.shoppingapp.entities.Product;
-import com.example.shoppingapp.entities.User;
+import com.example.shoppingapp.entities.*;
 import com.example.shoppingapp.product.ProductService;
+import com.example.shoppingapp.repository.ProductRepository;
+import com.example.shoppingapp.repository.UserRepository;
 import com.example.shoppingapp.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,23 +15,32 @@ import javax.annotation.PostConstruct;
 public class ShoppingappApplication {
 
 	@Autowired
-	UserService userService;
+	ProductService productService;
 
 	@Autowired
-	ProductService productService;
+	UserRepository userRepository;
+
+	@Autowired
+	ProductRepository productRepository;
 
 
 	@PostConstruct
 	public void initData() {
 		//Create User
 		User user = new User("johndoe", "1234");
-		userService.createUser(user);
+		Cart cart = new Cart(user);
+		BillAddress billAddress = new BillAddress(user);
+		PaymentAddress paymentAddress = new PaymentAddress(user);
+		user.setCart(cart);
+		user.setBillAddress(billAddress);
+		user.setPaymentAddress(paymentAddress);
+		userRepository.save(user);
 
 		//Create Product
 		Product Orange = new Product("King Orange", 20.00);
 		Product Orange2 = new Product("Queen Orange", 10.00);
-		productService.addProduct(Orange);
-		productService.addProduct(Orange2);
+		productRepository.save(Orange);
+		productRepository.save(Orange2);
 	}
 
 	public static void main(String[] args) {

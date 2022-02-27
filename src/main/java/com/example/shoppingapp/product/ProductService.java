@@ -14,6 +14,10 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     public void addProduct(Product product) {
         productRepository.save(product);
     }
