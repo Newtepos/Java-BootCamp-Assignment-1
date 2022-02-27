@@ -6,24 +6,150 @@
 - Finish ExternalApi Setup
 
 ## API List
-
+### 1. Login
+`GET /login/`
 
 Body
 ```JSON
 {
- "name": "Martin",
- "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org#"
+    "username": "johndoe",
+    "password" : "1234"
 }
 ```
 Response
 ```JSON
 {
- "name": "Martin",
- "bornOn": "1957-01-05",
- "bornIn": "http://www.scotland.org#"
+    "message": "login success"
 }
 ```  
+
+### 2. Serach All Product by words
+`GET /product?p=product`
+
+Body
+```
+```
+Response
+```JSON
+{
+   [
+    {
+        "id": 5,
+        "productName": "King Orange",
+        "price": 20.0
+    },
+    {
+        "id": 6,
+        "productName": "Queen Orange",
+        "price": 10.0
+    }
+]
+}
+```
+
+### 3. Get Product By Id
+`GET /product/{id}`
+
+Body
+```
+```
+Response
+```JSON
+{
+    {
+    "id": 6,
+    "productName": "Queen Orange",
+    "price": 10.0
+}
+}
+```
+
+### 4. Add Product to UserCart
+`POST /user/{userId}/cart/add/{productId}/{quantity}
+
+Body
+```
+```
+Response
+```JSON
+{
+    "message": "Product Added to you cart!!"
+}
+``` 
+
+### 5. Get All Products in UserCart
+`GET /user/{userId}/cart
+
+Body
+```
+```
+Response
+```JSON
+[
+    {
+        "id": 7,
+        "quantity": 20,
+        "totalPrice": 400.0,
+        "product": {
+            "id": 5,
+            "productName": "King Orange",
+            "price": 20.0
+        }
+    }
+]
+```
+
+### 6. UserCart Checkout
+`GET /user/{userId}/cart/checkout
+
+Body
+```
+```
+Response
+```JSON
+{
+    "date": "2022-02-27T10:46:16.339+00:00",
+    "name": "johndoe",
+    "billAddress": {
+        "id": 2,
+        "province": "Bangkok",
+        "district": "Klongsam-parvet",
+        "zipCode": 10520
+    },
+    "paymentAddress": {
+        "id": 4,
+        "cardHolder": "Supakit",
+        "cardNumber": 1231233
+    },
+    "cartItemList": [
+        {
+            "id": 7,
+            "quantity": 20,
+            "totalPrice": 400.0,
+            "product": {
+                "id": 5,
+                "productName": "King Orange",
+                "price": 20.0
+            }
+        }
+    ]
+}
+```
+
+### 7. ExternalApi Mockup Check
+`GET localhost:8882/checkout
+
+Body
+```
+```
+Response
+```JSON
+{
+    "message": "Bank Pay Completed"
+}
+```
+
+
 ## Main Flow Process
 [![](https://mermaid.ink/img/pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)](https://mermaid-js.github.io/mermaid-live-editor/edit/#pako:eNpN0MFuwyAMANBfsbiMSu0P5FCpTdJeNrVStlsuCLwEJQEE5jA1_fexkWyBC7KfDfjBpFXICtZ54Xp4r1oDaZ14Q8LTDg6HI8wn50BIiSHMZ_5qO23uosNdpudsfsMQYmYlfxN-QIINLDO8e6uiJChHLQdUc8XXyMZWy8VKwZolC2V60l9dzT8C-pcATW-d06bL6U2TOjcpe5SDjf-VF54bLfFFX7K-WoKbV-ihQhJ6nK8cjUomb7ZnE_pJaJVm9vipbBn1OGHLinRU6dcta80zueiUIKyVJutZ8SnGgHsmItnmy0hWkI-4okqLNP9pUc9vMbGD8g)
 
