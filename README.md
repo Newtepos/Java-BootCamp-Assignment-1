@@ -2,8 +2,14 @@
 ## InitialSetup
 ### Stubby4j for ExternalApi Mockup
 - [Download](www.google.com) Stubby4j 
-- Run command java -jar stubby4j-x.x.x.jar -d BankApi.yaml (following your stubbh4j version)
+- Run command ```java -jar stubby4j-x.x.x.jar -d BankApi.yaml``` (following your stubbh4j version)
 - Finish ExternalApi Setup
+
+## Run command
+```
+$mvnw clean package
+$java -jar target/xxxx.java
+```
 
 ## API List
 ### 1. Login
