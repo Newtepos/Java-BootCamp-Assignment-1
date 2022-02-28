@@ -1,9 +1,15 @@
 # Java-BootCamp-Assignment-1
+## Project Short Description
+This Project used Java Spring Boot to create basic shoppingApp Api such as login, search Product, add product to cart, checkout.
+<br/><br/>
+
 ## InitialSetup
 ### Stubby4j for ExternalApi Mockup
 - [Download](www.google.com) Stubby4j 
 - Run command ```java -jar stubby4j-x.x.x.jar -d BankApi.yaml``` (following your stubbh4j version)
 - Finish ExternalApi Setup
+<br/><br/>
+
 
 ## Run command
 ```
@@ -163,6 +169,7 @@ Response
     "message": "Bank Pay Completed"
 }
 ```
+<br/><br/>
 
 ## Process Flow
 ### 1. Main Flow Process
