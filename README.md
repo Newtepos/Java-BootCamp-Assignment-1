@@ -12,8 +12,17 @@ $java -jar target/xxxx.java
 ```
 
 ## API List
+| Method |                       Url                      |                       Description                       | Sample Valid Request Body | Samplat Valid Response Body |
+|:------:|:----------------------------------------------:|:-------------------------------------------------------:|:-------------------------:|:---------------------------:|
+|  POST  |                     /login                     |                        login user                       |            JSON           |             JSON            |
+|   GET  |               /product?p=product               |                Search products in market                |            JSON           |             JSON            |
+|   GET  |                  /product/{id}                 |                   Search product by id                  |            JSON           |             JSON            |
+|  POST  | /user/{userId}/cart/add/{productId}/{quantity} | Add Product to User cart by UserId, ProductId, quantity |            JSON           |             JSON            |
+|   GET  |               /user/{userId}/cart              |     Reterive Product Items in User's Cart by UserId     |            JSON           |             JSON            |
+|   GET  |          /user/{userId}/cart/checkout          |              Checkout Items in User's Cart              |            JSON           |             JSON            |
+
 ### 1. Login
-`GET /login/`
+`POST /login/`
 
 Body
 ```JSON
